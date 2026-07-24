@@ -22,7 +22,7 @@ Work from the `charts-projects` workspace root.
 | --- | --- | --- | --- |
 | Workspace | `.` | Standalone | Never |
 | Library | `projects/charts` | Primary or standalone | User-impact gate |
-| Documentation | `projects/charts-docs` | Standalone or charts companion | Never for docs-only work |
+| Documentation | `projects/charts-docs` | Standalone or charts companion | Never |
 | Playground | `projects/charts-playground` | Standalone or charts companion | Never |
 | GIF recorder | `projects/charts-gif-recorder` | Standalone | Never |
 | GitHub profile | `projects/charts-github-profile` | Standalone | Never |
@@ -90,29 +90,34 @@ Use this workflow only when `projects/charts` is selected.
 1. Complete the common workflow for `charts` first and capture its PR number.
 2. Read [references/changeset.md](references/changeset.md) and apply the
    user-impact gate.
-3. When related docs changes exist or a changeset is required:
+3. When a changeset is required:
+   - add it to the release-note directory in the current `charts` branch;
+   - validate, commit, and push the changeset to update the existing charts PR.
+4. When related authored docs changes exist:
    - keep an existing related feature branch and update its pull request when
      one exists; otherwise create or reuse `docs/charts-pr-<pr-number>` from
      the docs base remote's `main`;
-   - add the changeset when required;
    - commit only uncommitted related docs files, push, and create or update the
-     docs PR.
-4. When related playground changes exist:
+     docs PR;
+   - do not create a docs companion PR solely to synchronize a charts
+     changeset; the post-merge workflow mirrors the complete versioned
+     release-note directory.
+5. When related playground changes exist:
    - keep an existing related feature branch and update its pull request when
      one exists; otherwise create or reuse
      `playground/charts-pr-<pr-number>` from the playground base remote's
      `main`;
    - commit only uncommitted related files, push, and create or update the
      playground PR.
-5. Update the charts PR body with:
+6. Update the charts PR body with:
    - `Not required (technical/internal-only)` when the gate skips;
    - otherwise the changeset path;
    - all companion PRs under `Related PRs`.
-6. Report all PR URLs and the exact changeset skip reason when applicable.
+7. Report all PR URLs and the exact changeset skip reason when applicable.
 
 ## Standalone changeset
 
 When the user asks only for a changeset, follow
 [references/changeset.md](references/changeset.md). Require a charts PR number
-or infer it from the current charts PR. Do not commit, push, or open a companion
-PR unless requested.
+or infer it from the current charts PR. Write only in `projects/charts`. Do not
+commit or push unless requested.
