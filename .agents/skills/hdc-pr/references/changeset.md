@@ -32,20 +32,34 @@ explicit user value overrides an inferred value.
 
 ## Create the file
 
-1. Use `projects/charts-docs` from the workspace root.
-2. Ensure `projects/charts-docs/content/snapshot/changes/` exists.
-3. Copy [../assets/pr-changeset.md](../assets/pr-changeset.md) to:
+1. Use `projects/charts` from the workspace root.
+2. Read `projects/charts/.version`, require a value matching
+   `<major>.<minor>.<patch>-SNAPSHOT`, and remove the `-SNAPSHOT` suffix to
+   obtain `release_version`.
+3. Ensure both release fragment directories exist:
 
    ```text
-   projects/charts-docs/content/snapshot/changes/<pr-number>-<short-kebab>.md
+   projects/charts/release-notes/<release_version>/changes/
+   projects/charts/release-notes/<release_version>/migrations/
    ```
 
-4. Populate the PR URL as:
+4. Copy [../assets/pr-changeset.md](../assets/pr-changeset.md) to:
+
+   ```text
+   projects/charts/release-notes/<release_version>/changes/<pr-number>-<short-kebab>.md
+   ```
+
+5. Populate the PR URL as:
 
    ```text
    https://github.com/HDCharts/charts/pull/<pr-number>
    ```
 
-5. Validate the allowed type, published module name, PR URL, release-note word
+6. Validate the allowed type, published module name, PR URL, release-note word
    count, and absence of template placeholders.
-6. Report the created path.
+7. Report the release version and created path.
+
+The changeset remains part of the charts pull request. Do not create or update
+a charts-docs pull request for it. After the charts change merges to `main`,
+automation mirrors the complete `release-notes/<release_version>/` directory
+into charts-docs.
