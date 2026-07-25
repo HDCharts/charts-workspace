@@ -5,11 +5,13 @@ description: Run the configured HDCharts binary API compatibility check and gene
 
 # Check HDCharts release compatibility
 
-Generate incremental migration guidance from the library's configured API
-compatibility baseline and reports. Migration fragments accumulate for the
-target release even when the compatibility baseline advances. The docs sync
-mirrors these fragments unchanged and the docs app assembles them at build
-time; do not generate a combined snapshot migration file.
+Generate incremental migration guidance from the library's API compatibility
+reports. For normal PR checks, use the configured compatibility baseline. For
+release audits, compare against the previous release tag explicitly, even when
+the configured baseline has advanced. Migration fragments accumulate for the
+target release. The docs sync mirrors these fragments unchanged and the docs
+app assembles them at build time; do not generate a combined snapshot migration
+file.
 
 ## Guardrails
 
@@ -49,8 +51,11 @@ Work from the `charts-workspace` workspace root. Require `workspace/charts`.
    An explicit user value overrides an inferred value when creating the first
    fragment. When no stable fragment identity can be resolved, complete the
    compatibility inspection but stop before writing.
-3. Read the configured baseline ref from
-   `workspace/charts/.github/api-compatibility-baseline.txt` for reporting.
+3. Resolve the baseline ref:
+   - for release audits, use the previous release tag provided by the user or
+     inferred from the release history;
+   - otherwise read the configured baseline ref from
+     `workspace/charts/.github/api-compatibility-baseline.txt`.
 4. Remove the generated
    `workspace/charts/build/reports/api-compatibility/` directory so only reports
    from the current run can be considered.
@@ -58,6 +63,12 @@ Work from the `charts-workspace` workspace root. Require `workspace/charts`.
 
    ```text
    ./gradlew apiCompatibilityCheck --no-daemon --continue
+   ```
+
+   For release audits, pass the explicit baseline:
+
+   ```text
+   ./gradlew apiCompatibilityCheck --no-daemon --continue -PapiCompatibilityBaselineRef=<previous-release-tag>
    ```
 
 6. Capture the command's exit status and output. When it exits nonzero,

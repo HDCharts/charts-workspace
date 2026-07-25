@@ -1,5 +1,9 @@
 ## <module>
 
+### Reported API symbols
+
+- `<symbol from the API compatibility report>`
+
 ### Do I need to update call sites?
 
 - No, if `<condition where no code changes are needed>`.
