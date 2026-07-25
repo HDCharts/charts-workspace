@@ -6,11 +6,12 @@ when the user explicitly requests a standalone changeset.
 ## User-impact gate
 
 Create a changeset when users need to know about an observable feature, fix,
-behavior change, API change, or documentation change.
+behavior change, API change, or public documentation change.
 
 Skip it for technical or internal-only changes, including CI configuration,
 dependency-only updates with no behavior change, internal refactors, build
-cleanup, formatting, linting, and repository maintenance.
+cleanup, formatting, linting, repository maintenance, and release-process
+documentation that does not affect library users.
 
 When skipped, output exactly:
 
@@ -27,8 +28,8 @@ explicit user value overrides an inferred value.
 - `short_kebab`: concise lowercase kebab-case summary
 - `type`: one of `feature`, `fix`, `refactor`, `docs`, or `chore`
 - `module`: the most relevant published module
-- `release_note`: one plain-language, user-facing sentence of at most 20 words,
-  without internal implementation jargon
+- `release_note`: one plain-language sentence of at most 20 words that belongs
+  in the public "What's New" section, without internal implementation jargon
 
 ## Create the file
 
