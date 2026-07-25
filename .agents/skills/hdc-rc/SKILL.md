@@ -22,16 +22,16 @@ time; do not generate a combined snapshot migration file.
 
 ## Workspace
 
-Work from the `charts-projects` workspace root. Require `projects/charts`.
+Work from the `charts-workspace` workspace root. Require `workspace/charts`.
 
 ## Workflow
 
-1. Read `projects/charts/.version`, require
+1. Read `workspace/charts/.version`, require
    `<major>.<minor>.<patch>-SNAPSHOT`, remove the suffix to obtain
    `release_version`, and use:
 
    ```text
-   projects/charts/release-notes/<release_version>/migrations/
+   workspace/charts/release-notes/<release_version>/migrations/
    ```
 
 2. Resolve the current `HDCharts/charts` pull request number. Search the target
@@ -50,11 +50,11 @@ Work from the `charts-projects` workspace root. Require `projects/charts`.
    fragment. When no stable fragment identity can be resolved, complete the
    compatibility inspection but stop before writing.
 3. Read the configured baseline ref from
-   `projects/charts/.github/api-compatibility-baseline.txt` for reporting.
+   `workspace/charts/.github/api-compatibility-baseline.txt` for reporting.
 4. Remove the generated
-   `projects/charts/build/reports/api-compatibility/` directory so only reports
+   `workspace/charts/build/reports/api-compatibility/` directory so only reports
    from the current run can be considered.
-5. Run from `projects/charts`:
+5. Run from `workspace/charts`:
 
    ```text
    ./gradlew apiCompatibilityCheck --no-daemon --continue
