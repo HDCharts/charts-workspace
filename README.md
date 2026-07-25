@@ -1,4 +1,4 @@
-# charts-projects
+# charts-workspace
 
 Shared local workspace for the HDCharts projects.
 
@@ -16,11 +16,11 @@ scripts/clone-repos.sh
 The script asks which projects to clone and puts them in:
 
 ```text
-projects/
+workspace/
 ```
 
 That folder is ignored by this repository, so each project keeps its own Git
-status and changes do not show up as changes in `charts-projects`.
+status and changes do not show up as changes in `charts-workspace`.
 
 To clone everything without a prompt:
 
@@ -34,17 +34,33 @@ To use SSH clone URLs:
 scripts/clone-repos.sh --ssh
 ```
 
-To clone into a custom directory:
-
-```bash
-scripts/clone-repos.sh --dest ../HDCharts-workspace
-```
-
 To preview what would be cloned:
 
 ```bash
 scripts/clone-repos.sh --dry-run
 ```
+
+## VS Code Workspace
+
+After cloning the projects, open the multi-root workspace:
+
+```bash
+code charts-workspace.code-workspace
+```
+
+The workspace includes this repository and every project configured by the
+clone script. VS Code then shows each repository separately in the Source
+Control panel, including the repository name and its changed files.
+
+If a project has not been cloned yet, run the clone script and reload the
+workspace.
+
+The workspace also provides a terminal profile for each repository on macOS
+and Linux. Use the dropdown next to the new-terminal button and choose a
+repository. Each terminal starts in that repository's directory, and you can
+open as many repository terminals as needed. VS Code restores those terminals
+the next time the workspace is opened. Open the desired terminals once; close
+a terminal when it should no longer be restored.
 
 ## Repositories
 
@@ -69,7 +85,7 @@ Agent Skills `SKILL.md` format:
   snapshot migration notes.
 
 Open this workspace root when using these skills so the agent can access the
-sibling repositories under `projects/`.
+sibling repositories under `workspace/`.
 
 Agents that use `.agents/skills/` discover the canonical skills directly.
 Compatibility symlinks are included for Claude Code, Kilo Code, and Roo Code.

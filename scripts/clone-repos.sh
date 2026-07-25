@@ -3,7 +3,7 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-DEST_DIR="$ROOT_DIR/projects"
+DEST_DIR="$ROOT_DIR/workspace"
 USE_SSH=0
 CLONE_ALL=0
 LIST_ONLY=0
@@ -37,11 +37,10 @@ usage() {
   cat <<EOF
 Usage: scripts/clone-repos.sh [options]
 
-Clone selected HDCharts project repositories into ./projects.
+Clone selected HDCharts project repositories into ./workspace.
 
 Options:
   --all              Clone all repositories without prompting.
-  --dest DIR         Clone repositories into DIR instead of ./projects.
   --dry-run          Print what would be cloned without cloning.
   --ssh              Use SSH clone URLs instead of HTTPS.
   --list             Print configured repositories and exit.
@@ -50,7 +49,7 @@ Options:
 Examples:
   scripts/clone-repos.sh
   scripts/clone-repos.sh --all
-  scripts/clone-repos.sh --ssh --dest ../HDCharts-workspace
+  scripts/clone-repos.sh --ssh
 EOF
 }
 
@@ -160,14 +159,6 @@ while [[ "$#" -gt 0 ]]; do
       CLONE_ALL=1
       shift
       ;;
-    --dest)
-      if [[ "$#" -lt 2 ]]; then
-        printf 'Missing value for --dest\n' >&2
-        exit 1
-      fi
-      DEST_DIR="$2"
-      shift 2
-      ;;
     --dry-run)
       DRY_RUN=1
       shift
@@ -191,10 +182,6 @@ while [[ "$#" -gt 0 ]]; do
       ;;
   esac
 done
-
-if [[ "$DEST_DIR" != /* ]]; then
-  DEST_DIR="$ROOT_DIR/$DEST_DIR"
-fi
 
 if [[ "$LIST_ONLY" -eq 1 ]]; then
   print_repos

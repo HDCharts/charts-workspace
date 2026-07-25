@@ -1,6 +1,6 @@
 ---
 name: hdc-pr
-description: Create or update pull requests for changed repositories in the HDCharts multi-repository workspace, routing standalone repository PRs and coordinated charts, docs, or playground PRs. Apply the changeset gate only to user-facing projects/charts changes. Use only when the user explicitly asks to create, open, publish, or ship a PR, or explicitly asks for a standalone HDCharts PR changeset.
+description: Create or update pull requests for changed repositories in the HDCharts multi-repository workspace, routing standalone repository PRs and coordinated charts, docs, or playground PRs. Apply the changeset gate only to user-facing workspace/charts changes. Use only when the user explicitly asks to create, open, publish, or ship a PR, or explicitly asks for a standalone HDCharts PR changeset.
 ---
 
 # Ship HDCharts workspace PRs
@@ -16,16 +16,16 @@ requests without touching unrelated work.
 
 ## Repository routing
 
-Work from the `charts-projects` workspace root.
+Work from the `charts-workspace` workspace root.
 
 | Repository | Path | PR mode | Changeset |
 | --- | --- | --- | --- |
 | Workspace | `.` | Standalone | Never |
-| Library | `projects/charts` | Primary or standalone | User-impact gate |
-| Documentation | `projects/charts-docs` | Standalone or charts companion | Never |
-| Playground | `projects/charts-playground` | Standalone or charts companion | Never |
-| GIF recorder | `projects/charts-gif-recorder` | Standalone | Never |
-| GitHub profile | `projects/charts-github-profile` | Standalone | Never |
+| Library | `workspace/charts` | Primary or standalone | User-impact gate |
+| Documentation | `workspace/charts-docs` | Standalone or charts companion | Never |
+| Playground | `workspace/charts-playground` | Standalone or charts companion | Never |
+| GIF recorder | `workspace/charts-gif-recorder` | Standalone | Never |
+| GitHub profile | `workspace/charts-github-profile` | Standalone | Never |
 
 Skip repositories that are not cloned unless the user explicitly selected one.
 
@@ -69,7 +69,7 @@ For each selected repository:
 8. Create or update the PR body with
    [assets/pr-body.md](assets/pr-body.md):
    - use `Not applicable (non-charts repository)` for standalone PRs outside
-     `projects/charts`;
+     `workspace/charts`;
    - leave the status `Pending` for a `charts` PR until the changeset gate runs.
 9. Capture and report the PR URL.
 
@@ -85,7 +85,7 @@ When several selected repositories belong to the same request:
 
 ## Coordinated charts workflow
 
-Use this workflow only when `projects/charts` is selected.
+Use this workflow only when `workspace/charts` is selected.
 
 1. Complete the common workflow for `charts` first and capture its PR number.
 2. Read [references/changeset.md](references/changeset.md) and apply the
@@ -119,5 +119,5 @@ Use this workflow only when `projects/charts` is selected.
 
 When the user asks only for a changeset, follow
 [references/changeset.md](references/changeset.md). Require a charts PR number
-or infer it from the current charts PR. Write only in `projects/charts`. Do not
+or infer it from the current charts PR. Write only in `workspace/charts`. Do not
 commit or push unless requested.
