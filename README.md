@@ -95,7 +95,3 @@ To confirm that a skills.sh-compatible client can discover the skills:
 ```bash
 npx skills add . --list
 ```
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for local setup and pull request guidelines.
