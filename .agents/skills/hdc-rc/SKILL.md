@@ -24,16 +24,16 @@ file.
 
 ## Workspace
 
-Work from the `charts-workspace` workspace root. Require `workspace/charts`.
+Work from the `charts-workspace` workspace root. Require `charts`.
 
 ## Workflow
 
-1. Read `workspace/charts/.version`, require
+1. Read `charts/.version`, require
    `<major>.<minor>.<patch>-SNAPSHOT`, remove the suffix to obtain
    `release_version`, and use:
 
    ```text
-   workspace/charts/release-notes/<release_version>/migrations/
+   charts/release-notes/<release_version>/migrations/
    ```
 
 2. Resolve the current `HDCharts/charts` pull request number. Search the target
@@ -55,11 +55,11 @@ Work from the `charts-workspace` workspace root. Require `workspace/charts`.
    - for release audits, use the previous release tag provided by the user or
      inferred from the release history;
    - otherwise read the configured baseline ref from
-     `workspace/charts/.github/api-compatibility-baseline.txt`.
+     `charts/.github/api-compatibility-baseline.txt`.
 4. Remove the generated
-   `workspace/charts/build/reports/api-compatibility/` directory so only reports
+   `charts/build/reports/api-compatibility/` directory so only reports
    from the current run can be considered.
-5. Run from `workspace/charts`:
+5. Run from `charts`:
 
    ```text
    ./gradlew apiCompatibilityCheck --no-daemon --continue

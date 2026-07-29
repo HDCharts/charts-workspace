@@ -1,34 +1,31 @@
 {
 	"folders": [
 		{
-			"name": "Workspace setup",
+			"name": "charts-workspace",
 			"path": "."
 		},
 		{
-			"name": "HDCharts core library",
-			"path": "workspace/charts"
+			"name": "charts",
+			"path": "../charts"
 		},
 		{
-			"name": "Documentation site",
-			"path": "workspace/charts-docs"
+			"name": "charts-docs",
+			"path": "../charts-docs"
 		},
 		{
-			"name": "Playground app",
-			"path": "workspace/charts-playground"
+			"name": "charts-playground",
+			"path": "../charts-playground"
 		},
 		{
-			"name": "GIF recorder",
-			"path": "workspace/charts-gif-recorder"
+			"name": "charts-gif-recorder",
+			"path": "../charts-gif-recorder"
 		},
 		{
-			"name": "GitHub organization profile",
-			"path": "workspace/charts-github-profile"
+			"name": "charts-github-profile",
+			"path": "../charts-github-profile"
 		}
 	],
 	"settings": {
-		"files.exclude": {
-			"workspace": true
-		},
 		"git.autoRepositoryDetection": true,
 		"terminal.integrated.enablePersistentSessions": true,
 		"terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
@@ -36,37 +33,37 @@
 		"terminal.integrated.profiles.osx": {
 			"HDC_charts-workspace": {
 				"path": "${env:SHELL}",
-				"args": ["-l", "-c", "cd \"${workspaceFolder:Workspace setup}\" && exec \"$SHELL\" -l -i"],
+				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-workspace}\" && exec \"$SHELL\" -l -i"],
 				"overrideName": true,
 				"icon": "repo"
 			},
 			"HDC_charts": {
 				"path": "${env:SHELL}",
-				"args": ["-l", "-c", "cd \"${workspaceFolder:HDCharts core library}\" && exec \"$SHELL\" -l -i"],
+				"args": ["-l", "-c", "cd \"${workspaceFolder:charts}\" && exec \"$SHELL\" -l -i"],
 				"overrideName": true,
 				"icon": "repo"
 			},
 			"HDC_charts-docs": {
 				"path": "${env:SHELL}",
-				"args": ["-l", "-c", "cd \"${workspaceFolder:Documentation site}\" && exec \"$SHELL\" -l -i"],
+				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-docs}\" && exec \"$SHELL\" -l -i"],
 				"overrideName": true,
 				"icon": "repo"
 			},
 			"HDC_charts-playground": {
 				"path": "${env:SHELL}",
-				"args": ["-l", "-c", "cd \"${workspaceFolder:Playground app}\" && exec \"$SHELL\" -l -i"],
+				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-playground}\" && exec \"$SHELL\" -l -i"],
 				"overrideName": true,
 				"icon": "repo"
 			},
 			"HDC_charts-gif-recorder": {
 				"path": "${env:SHELL}",
-				"args": ["-l", "-c", "cd \"${workspaceFolder:GIF recorder}\" && exec \"$SHELL\" -l -i"],
+				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-gif-recorder}\" && exec \"$SHELL\" -l -i"],
 				"overrideName": true,
 				"icon": "repo"
 			},
 			"HDC_charts-github-profile": {
 				"path": "${env:SHELL}",
-				"args": ["-l", "-c", "cd \"${workspaceFolder:GitHub organization profile}\" && exec \"$SHELL\" -l -i"],
+				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-github-profile}\" && exec \"$SHELL\" -l -i"],
 				"overrideName": true,
 				"icon": "repo"
 			}
@@ -74,37 +71,37 @@
 		"terminal.integrated.profiles.linux": {
 			"HDC_charts-workspace": {
 				"path": "${env:SHELL}",
-				"args": ["-l", "-c", "cd \"${workspaceFolder:Workspace setup}\" && exec \"$SHELL\" -l -i"],
+				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-workspace}\" && exec \"$SHELL\" -l -i"],
 				"overrideName": true,
 				"icon": "repo"
 			},
 			"HDC_charts": {
 				"path": "${env:SHELL}",
-				"args": ["-l", "-c", "cd \"${workspaceFolder:HDCharts core library}\" && exec \"$SHELL\" -l -i"],
+				"args": ["-l", "-c", "cd \"${workspaceFolder:charts}\" && exec \"$SHELL\" -l -i"],
 				"overrideName": true,
 				"icon": "repo"
 			},
 			"HDC_charts-docs": {
 				"path": "${env:SHELL}",
-				"args": ["-l", "-c", "cd \"${workspaceFolder:Documentation site}\" && exec \"$SHELL\" -l -i"],
+				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-docs}\" && exec \"$SHELL\" -l -i"],
 				"overrideName": true,
 				"icon": "repo"
 			},
 			"HDC_charts-playground": {
 				"path": "${env:SHELL}",
-				"args": ["-l", "-c", "cd \"${workspaceFolder:Playground app}\" && exec \"$SHELL\" -l -i"],
+				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-playground}\" && exec \"$SHELL\" -l -i"],
 				"overrideName": true,
 				"icon": "repo"
 			},
 			"HDC_charts-gif-recorder": {
 				"path": "${env:SHELL}",
-				"args": ["-l", "-c", "cd \"${workspaceFolder:GIF recorder}\" && exec \"$SHELL\" -l -i"],
+				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-gif-recorder}\" && exec \"$SHELL\" -l -i"],
 				"overrideName": true,
 				"icon": "repo"
 			},
 			"HDC_charts-github-profile": {
 				"path": "${env:SHELL}",
-				"args": ["-l", "-c", "cd \"${workspaceFolder:GitHub organization profile}\" && exec \"$SHELL\" -l -i"],
+				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-github-profile}\" && exec \"$SHELL\" -l -i"],
 				"overrideName": true,
 				"icon": "repo"
 			}

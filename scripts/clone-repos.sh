@@ -3,7 +3,7 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-DEST_DIR="$ROOT_DIR/workspace"
+DEST_DIR="$(cd "$ROOT_DIR/.." && pwd)"
 USE_SSH=0
 CLONE_ALL=0
 LIST_ONLY=0
@@ -37,7 +37,7 @@ usage() {
   cat <<EOF
 Usage: scripts/clone-repos.sh [options]
 
-Clone selected HDCharts project repositories into ./workspace.
+Clone selected HDCharts project repositories into the workspace root.
 
 Options:
   --all              Clone all repositories without prompting.

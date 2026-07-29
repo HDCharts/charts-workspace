@@ -13,14 +13,16 @@ From this repository:
 scripts/clone-repos.sh
 ```
 
-The script asks which projects to clone and puts them in:
+The script asks which projects to clone and places them as siblings
+alongside this repository in the parent directory:
 
 ```text
-workspace/
+..
+├── charts-projects/
+├── charts/
+├── charts-docs/
+├── ...
 ```
-
-That folder is ignored by this repository, so each project keeps its own Git
-status and changes do not show up as changes in `charts-workspace`.
 
 To clone everything without a prompt:
 
@@ -85,7 +87,7 @@ Agent Skills `SKILL.md` format:
   snapshot migration notes.
 
 Open this workspace root when using these skills so the agent can access the
-sibling repositories under `workspace/`.
+sibling repositories.
 
 Agents that use `.agents/skills/` discover the canonical skills directly.
 Compatibility symlinks are included for Claude Code, Kilo Code, and Roo Code.
