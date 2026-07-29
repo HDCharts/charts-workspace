@@ -1,6 +1,4 @@
-/workspace/
-/repos/
-
+# Removed /workspace/ and /repos/ for flat structure
 .DS_Store
 .env
 .env.*

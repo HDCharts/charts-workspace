@@ -33,21 +33,21 @@ explicit user value overrides an inferred value.
 
 ## Create the file
 
-1. Use `workspace/charts` from the workspace root.
-2. Read `workspace/charts/.version`, require a value matching
+1. Use `charts` from the workspace root.
+2. Read `charts/.version`, require a value matching
    `<major>.<minor>.<patch>-SNAPSHOT`, and remove the `-SNAPSHOT` suffix to
    obtain `release_version`.
 3. Ensure both release fragment directories exist:
 
    ```text
-   workspace/charts/release-notes/<release_version>/changes/
-   workspace/charts/release-notes/<release_version>/migrations/
+   charts/release-notes/<release_version>/changes/
+   charts/release-notes/<release_version>/migrations/
    ```
 
 4. Copy [../assets/pr-changeset.md](../assets/pr-changeset.md) to:
 
    ```text
-   workspace/charts/release-notes/<release_version>/changes/<pr-number>-<short-kebab>.md
+   charts/release-notes/<release_version>/changes/<pr-number>-<short-kebab>.md
    ```
 
 5. Populate the PR URL as:

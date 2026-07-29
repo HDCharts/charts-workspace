@@ -6,29 +6,26 @@
 		},
 		{
 			"name": "HDCharts core library",
-			"path": "workspace/charts"
+			"path": "charts"
 		},
 		{
 			"name": "Documentation site",
-			"path": "workspace/charts-docs"
+			"path": "charts-docs"
 		},
 		{
 			"name": "Playground app",
-			"path": "workspace/charts-playground"
+			"path": "charts-playground"
 		},
 		{
 			"name": "GIF recorder",
-			"path": "workspace/charts-gif-recorder"
+			"path": "charts-gif-recorder"
 		},
 		{
 			"name": "GitHub organization profile",
-			"path": "workspace/charts-github-profile"
+			"path": "charts-github-profile"
 		}
 	],
 	"settings": {
-		"files.exclude": {
-			"workspace": true
-		},
 		"git.autoRepositoryDetection": true,
 		"terminal.integrated.enablePersistentSessions": true,
 		"terminal.integrated.persistentSessionReviveProcess": "onExitAndWindowClose",
