@@ -6,23 +6,23 @@
 		},
 		{
 			"name": "HDCharts core library",
-			"path": "charts"
+			"path": "../charts"
 		},
 		{
 			"name": "Documentation site",
-			"path": "charts-docs"
+			"path": "../charts-docs"
 		},
 		{
 			"name": "Playground app",
-			"path": "charts-playground"
+			"path": "../charts-playground"
 		},
 		{
 			"name": "GIF recorder",
-			"path": "charts-gif-recorder"
+			"path": "../charts-gif-recorder"
 		},
 		{
 			"name": "GitHub organization profile",
-			"path": "charts-github-profile"
+			"path": "../charts-github-profile"
 		}
 	],
 	"settings": {

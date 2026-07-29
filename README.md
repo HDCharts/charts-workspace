@@ -13,13 +13,16 @@ From this repository:
 scripts/clone-repos.sh
 ```
 
-The script asks which projects to clone and puts them in:
+The script asks which projects to clone and places them as siblings
+alongside this repository in the parent directory:
 
 ```text
-.
+..
+├── charts-projects/
+├── charts/
+├── charts-docs/
+├── ...
 ```
-
-Repositories are cloned directly as siblings in this workspace root.
 
 To clone everything without a prompt:
 

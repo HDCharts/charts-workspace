@@ -3,7 +3,7 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-DEST_DIR="$ROOT_DIR"
+DEST_DIR="$(cd "$ROOT_DIR/.." && pwd)"
 USE_SSH=0
 CLONE_ALL=0
 LIST_ONLY=0
