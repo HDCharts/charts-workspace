@@ -1,12 +1,12 @@
 {
 	"folders": [
 		{
-			"name": "charts-workspace",
-			"path": "."
-		},
-		{
 			"name": "charts",
 			"path": "../charts"
+		},
+		{
+			"name": "charts-workspace",
+			"path": "."
 		},
 		{
 			"name": "charts-docs",
