@@ -18,7 +18,7 @@ alongside this repository in the parent directory:
 
 ```text
 ..
-├── charts-projects/
+├── charts-workspace/
 ├── charts/
 ├── charts-docs/
 ├── ...
