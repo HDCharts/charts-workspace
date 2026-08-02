@@ -16,7 +16,7 @@ documentation that does not affect library users.
 When skipped, output exactly:
 
 ```text
-No changeset needed (technical/internal-only PR).
+No changeset needed.
 ```
 
 ## Required values
