@@ -66,11 +66,12 @@ For each selected repository:
    URLs. Create, find, and update the PR explicitly in the base remote's
    repository, targeting `main`. When the head remote is a different repository,
    use `<head-owner>:<branch>` as the PR head; otherwise use `<branch>`.
-8. Create or update the PR body with
-   [assets/pr-body.md](assets/pr-body.md):
-   - use `Not applicable (non-charts repository)` for standalone PRs outside
-     `charts`;
-   - leave the status `Pending` for a `charts` PR until the changeset gate runs.
+8. Create or update the PR body from the target repository's template. From
+   the workspace root, use
+   `charts-github-profile/PULL_REQUEST_TEMPLATE.md` for HDCharts repositories
+   without a local template.
+   - leave the changeset status for a `charts` PR until the changeset gate runs;
+   - do not add repository-specific sections that are not relevant to the PR.
 9. Capture and report the PR URL.
 
 ## Link related PRs
@@ -110,10 +111,10 @@ Use this workflow only when `charts` is selected.
    - commit only uncommitted related files, push, and create or update the
      playground PR.
 6. Update the charts PR body with:
-   - `Not required (technical/internal-only)` when the gate skips;
-   - otherwise the changeset path;
+   - `Not required` when no changeset is needed;
+   - otherwise `Created: <changeset path>`;
    - all companion PRs under `Related PRs`.
-7. Report all PR URLs and the exact changeset skip reason when applicable.
+7. Report all PR URLs and whether a changeset was created or was not required.
 
 ## Standalone changeset
 
