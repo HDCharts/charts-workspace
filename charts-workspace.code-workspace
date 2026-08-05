@@ -23,6 +23,10 @@
 		{
 			"name": "charts-github-profile",
 			"path": "../charts-github-profile"
+		},
+		{
+			"name": "charts-internal",
+			"path": "../charts-internal"
 		}
 	],
 	"settings": {
@@ -66,6 +70,12 @@
 				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-github-profile}\" && exec \"$SHELL\" -l -i"],
 				"overrideName": true,
 				"icon": "repo"
+			},
+			"HDC_charts-internal": {
+				"path": "${env:SHELL}",
+				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-internal}\" && exec \"$SHELL\" -l -i"],
+				"overrideName": true,
+				"icon": "repo"
 			}
 		},
 		"terminal.integrated.profiles.linux": {
@@ -102,6 +112,12 @@
 			"HDC_charts-github-profile": {
 				"path": "${env:SHELL}",
 				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-github-profile}\" && exec \"$SHELL\" -l -i"],
+				"overrideName": true,
+				"icon": "repo"
+			},
+			"HDC_charts-internal": {
+				"path": "${env:SHELL}",
+				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-internal}\" && exec \"$SHELL\" -l -i"],
 				"overrideName": true,
 				"icon": "repo"
 			}
