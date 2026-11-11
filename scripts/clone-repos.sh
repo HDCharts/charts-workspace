@@ -12,7 +12,6 @@ DRY_RUN=0
 REPO_NAMES=(
   "charts"
   "charts-docs"
-  "charts-playground"
   "charts-gif-recorder"
   "charts-github-profile"
 )
@@ -20,7 +19,6 @@ REPO_NAMES=(
 REPO_LABELS=(
   "HDCharts core library"
   "Documentation site"
-  "Playground app"
   "GIF recorder"
   "GitHub organization profile and defaults"
 )
@@ -28,7 +26,6 @@ REPO_LABELS=(
 REPO_URLS=(
   "https://github.com/HDCharts/charts.git"
   "https://github.com/HDCharts/charts-docs.git"
-  "https://github.com/HDCharts/charts-playground.git"
   "https://github.com/hdcodedev/compose-gif-recorder.git"
   "https://github.com/HDCharts/.github.git"
 )
