@@ -13,10 +13,6 @@
 			"path": "../charts-docs"
 		},
 		{
-			"name": "charts-playground",
-			"path": "../charts-playground"
-		},
-		{
 			"name": "charts-gif-recorder",
 			"path": "../charts-gif-recorder"
 		},
@@ -50,12 +46,6 @@
 			"HDC_charts-docs": {
 				"path": "${env:SHELL}",
 				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-docs}\" && exec \"$SHELL\" -l -i"],
-				"overrideName": true,
-				"icon": "repo"
-			},
-			"HDC_charts-playground": {
-				"path": "${env:SHELL}",
-				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-playground}\" && exec \"$SHELL\" -l -i"],
 				"overrideName": true,
 				"icon": "repo"
 			},
@@ -94,12 +84,6 @@
 			"HDC_charts-docs": {
 				"path": "${env:SHELL}",
 				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-docs}\" && exec \"$SHELL\" -l -i"],
-				"overrideName": true,
-				"icon": "repo"
-			},
-			"HDC_charts-playground": {
-				"path": "${env:SHELL}",
-				"args": ["-l", "-c", "cd \"${workspaceFolder:charts-playground}\" && exec \"$SHELL\" -l -i"],
 				"overrideName": true,
 				"icon": "repo"
 			},
